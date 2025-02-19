@@ -29,13 +29,17 @@ Bayesian Optimization is a sequential design strategy for global optimization of
 2. **Acquisition Function (Expected Improvement)**:
     - Balances exploration (high uncertainty) and exploitation (low mean).
     - The Expected Improvement (EI) is given by:
+
       $$
       \text{EI}(x) = \mathbb{E}[\max(0, f_{\text{best}} - f(x))]
       $$
+
       - Closed-form solution:
+
         $$
         \text{EI}(x) = (f_{\text{best}} - \mu(x) - \xi)\Phi(Z) + \sigma(x)\phi(Z)
         $$
+        
         where $Z = \frac{f_{\text{best}} - \mu(x) - \xi}{\sigma(x)}$, $\Phi$ is the CDF, and $\phi$ is the PDF of the standard normal distribution.
 
 3. **Optimization Process**:
